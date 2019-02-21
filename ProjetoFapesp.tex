@@ -1,0 +1,214 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[english,brazil]{babel}
+\usepackage{verbatim}
+\usepackage{setspace}
+% \usepackage{harvard}
+\usepackage[]{graphicx}
+\usepackage{caption}
+\usepackage{url}
+\usepackage{subfigure}
+%\usepackage{wasysym} - Se usá-lo, não usar amsmath
+\hyphenation{heu-ris-ti-cas}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{multirow}
+% Referências e hiperlinks sem o "box" vermelho.
+\usepackage[hypertexnames=false,pdfborder={0 0 0}]{hyperref}
+
+% Lê a codificação de fonte T1 (font encoding default é 0T1).
+\usepackage[T1]{fontenc}
+
+% Equações, símbolos matemáticos e fontes providos pela American Mathematical Society (AMS).
+%\usepackage{amssymb}
+\usepackage{amssymb,amsfonts}	
+
+%\usepackage[center]{caption2}
+% \usepackage[portuguese,algoruled,longend]{algorithm2e}
+% \usepackage{algorithmic}
+\usepackage{lipsum}
+\usepackage[cm]{fullpage}
+
+\setlength{\paperheight}{29.79cm}
+\setlength{\paperwidth}{21.1cm}
+\setlength{\voffset}{0.32cm}
+\setlength{\hoffset}{0.055cm}
+\setlength{\oddsidemargin}{0.02cm}
+\setlength{\evensidemargin}{-0.605cm}
+\setlength{\topmargin}{0.0cm}
+\setlength{\headheight}{14.5pt}
+\setlength{\headsep}{0.3cm}
+\setlength{\textheight}{24.025cm}
+\setlength{\textwidth}{15.7cm}
+\setlength{\marginparsep}{0.0cm}
+\setlength{\marginparwidth}{0.0cm}
+\setlength{\marginparpush}{0.0cm}
+\setlength{\footskip}{0.0cm}
+
+%\textwidth = 17cm
+%\textheight= 22.0cm
+%\oddsidemargin = 1.3cm
+%\evensidemargin = 0.7cm
+%\voffset = -1.0cm
+%\hoffset = -2cm
+%\belowcaptionskip = 10pt
+
+% Formatação de cabeçalhos.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Apaga as configurações padrão.
+\fancyhf{}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+
+% Lista de siglas e abreviações.
+%\usepackage[printonlyused]{acronym}
+\usepackage[nolist]{acronym}
+% Uso da mesma fonte utilizada no texto nas siglas e abreviações.
+\def\bflabel#1{{\textbf{#1}\hfill}}
+
+%% Indentação do primeiro parágrafo dos capítulos.
+\usepackage{indentfirst}
+
+%%% Recuo do parágrafo.
+\parindent 1.25cm
+
+% Posicionamento de figuras e tabelas.
+\usepackage{float}
+
+% As legendas das figuras e tabelas são espacejadas com espaçamento simples
+% e os títulos das mesmas são separados da legenda por um hífen.
+%\usepackage[labelsep=endash,font=singlespacing]{caption}	
+
+% Formato ABNT
+\usepackage[alf,bibjustif]{abntcite} 
+
+
+
+
+% !TeX encoding = UTF-8
+\begin{document}
+
+% Lista de Siglas e de Símbolos.
+\input{Siglas_Simbolos}
+
+% Formato ABNT Autor-Data
+\bibliographystyle{abnt-alf}
+% Abreviação de apresentação de 4 ou mais autores no texto.
+\citeoption{abnt-etal-cite=3}
+% Subistituição do nome repetido de um autor por 6 traços underline.
+\citeoption{abnt-repeated-author-omit=yes}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Capa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocounter{page}{-1}
+\thispagestyle{empty}
+    
+\vspace{-4.0cm}
+\begin{figure}[t]
+	\centering
+		\includegraphics[width=0.31\textwidth]{USP.jpg}
+	\label{fig:USP}
+\end{figure}
+
+\begin{center}
+	\vspace{2 cm}
+	\Large{\textbf{UNIVERSIDADE DE SÃO PAULO}}\\[0.5cm]
+
+\large{\bf Escola de Engenharia de São Carlos}\\[0.5cm]
+
+\end{center}
+
+\doublespacing	
+
+\vspace{1.5 cm}
+\begin{center}
+{\bf PROJETO DE PESQUISA
+	
+DOUTORADO}
+\end{center}
+
+\vspace{1.5 cm}
+\begin{center}
+	\Large{\textbf{TITLE} }
+\end{center}
+
+\singlespacing
+
+\vspace{2 cm}
+\begin{center}
+	
+Aluno: NAME\\[0.5cm]
+	
+Orientador: NAME
+\end{center}
+
+\vspace{1 cm}
+%\maketitle
+\begin{center}
+City, Date
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Resumo e Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\selectlanguage{brazil}
+% Índices --------------------------------------------------------------
+\setlength{\parskip}{0mm}
+
+% \maketitle
+
+\onehalfspacing
+    
+\begin{abstract}
+	\noindent TEXT
+\end{abstract}
+
+\selectlanguage{english}
+
+\begin{abstract}
+	\noindent TEXT
+
+\end{abstract}
+
+\selectlanguage{brazil}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Introdução %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\setlength{\parskip}{3mm}
+\doublespacing
+
+\let\clearpage\relax
+\include{cap1/Intro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Justificativa %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{cap2/Jus}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Objetivos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{cap3/Obj}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Cronograma %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{cap4/Cron}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Material e Métodos %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{cap5/Met}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Forma de análise dos resultados %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{cap6/Resul}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusão %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{cap7/Conc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Referências bibliográficas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% Trocando título da seção Referências
+\renewcommand\refname{\vskip -2cm}
+\section*{Referências Bibliográficas}
+\bibliography{mybibfile}
+\newpage
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}          
